@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html lang="pt">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Meu Portfólio</title>
+  <link rel="stylesheet" href="portifolio.css">
+</head>
+<body>
+  <header>
+    <h1 id="title">seja bem vindo</h1>
+    <nav>
+      <a href="#about" id="nav-about">Sobre Mim</a>
+      <a href="#projects" id="nav-projects">Projetos</a>
+      <a href="#contact" id="nav-contact">Contato</a>
+    </nav>
+    <div class="language-switcher">
+      <button onclick="switchLanguage('pt')">Português</button>
+      <button onclick="switchLanguage('en')">English</button>
+    </div>
+  </header>
+
+  <section id="about" class="section">
+    <h2 id="about-title">Sobre Mim</h2>
+    <div class="profile-photo">
+        <img src="https://i.imgur.com/3caJdMp.png"/>
+    </div>
+    <p id="about-text">Olá, me chamo Inacio Gabriel Tavares da Silva, sou programador web especializado em Laravel e estou sempre em busca de melhorar.</p>
+  </section>
+
+  <section id="projects" class="projects">
+    <h2 id="projects-title">Meus Projetos</h2>
+    <div class="project-card">
+        <img src="https://i.imgur.com/0GHfWiC.png" alt="Causa Solidária">
+        <div class="project-content">
+          <h3 id="project1-title">Causa Solidária</h3>
+          <p id="project1-desc">Website para fazer doações para quem precisa.</p>
+          <a href="https://github.com/Causa-Solidaria/Causa-Solidaria">View Project</a>
+        </div>
+      </div>
+    </section>
+    
+  
+  <section id="contact" class="section">
+    <h2 id="contact-title">Contato</h2>
+    <p id="contact-text">Entre em contato comigo através das minhas redes sociais:</p>
+    <p><a href="mailto:email@exemplo.com" id="contact-email">inaciotavares342@gmail.com</a></p>
+  </section>
+
+  <footer>
+    <p id="footer-text">
+      Feito com ❤ por Mim | 
+      <a href="https://linkedin.com/in/inácio-gabriel-aa0599300" target="_blank">LinkedIn</a> | 
+      <a href="https://l.instagram.com/?u=https%3A%2F%2Fgithub.com%2FInaciogabriel0%3Ffbclid%3DPAZXh0bgNhZW0CMTEAAaYBmgx0T6-rV_-a7RXP9nAX49gzmIYwPC89xjdcTfpdhDdHGD33S3CtLxs_aem_EgVCsh6XlLQRYBaH7eXi2A&e=AT3E5POoIxmXl4L24Upuz6CSRCWlSJLGR19P6ItgQLalOP7x7cKvT_Vhilgjg3JFOpxJWawW_OfGTexYa8e3JpxJgxoMVm5wkEleHnatKX2Yb_YBvhIx0g" target="_blank">GitHub</a>
+    </p>
+  </footer>
+  
+  
+  <script>
+    const translations = {
+      en: {
+        title: "My Portfolio",
+        navAbout: "About Me",
+        navProjects: "Projects",
+        navContact: "Contact",
+        aboutTitle: "About Me",
+        aboutText: "Hello! I am a developer passionate about creating unique and efficient solutions...",
+        projectsTitle: "My Projects",
+        project1Title: "Solidary Cause",
+        project1Desc: "A website to make donations to those in need.",
+        project1Link: "View Project",
+        footerText: "Made with ❤ by Me | LinkedIn | GitHub",
+      },
+      pt: {
+        title: "Meu Portfólio",
+        navAbout: "Sobre Mim",
+        navProjects: "Projetos",
+        navContact: "Contato",
+        aboutTitle: "Sobre Mim",
+        aboutText: "Olá! Eu sou um desenvolvedor apaixonado...",
+        projectsTitle: "Meus Projetos",
+        project1Title: "Causa Solidária",
+        project1Desc: "Website para fazer doações para quem precisa",
+        project1Link: "Ver Projeto",
+        footerText: "Feito com ❤ por Mim | LinkedIn | GitHub",
+      },
+    };
+
+    function switchLanguage(lang) {
+      const elements = {
+        title: "title",
+        navAbout: "nav-about",
+        navProjects: "nav-projects",
+        navContact: "nav-contact",
+        aboutTitle: "about-title",
+        aboutText: "about-text",
+        projectsTitle: "projects-title",
+        project1Title: "project1-title",
+        project1Desc: "project1-desc",
+        project1Link: "project1-link",
+        footerText: "footer-text"
+      };
+
+      // Atualiza os textos com base no idioma selecionado
+      const translation = translations[lang];
+      for (let key in elements) {
+        if (elements.hasOwnProperty(key)) {
+          const element = document.getElementById(elements[key]);
+          if (element) {
+            element.innerText = translation[key];
+          }
+        }
+      }
+    }
+
+    // Adiciona comportamento de rolagem suave ao clicar em "Projetos"
+    document.getElementById("nav-projects").addEventListener("click", function(event) {
+      event.preventDefault(); // Evita o comportamento padrão do link
+      document.getElementById("projects").scrollIntoView({ behavior: "smooth" });
+    });
+  </script>
+</body>
+</html>
