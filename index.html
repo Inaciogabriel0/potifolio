@@ -14,10 +14,7 @@
       <a href="#projects" id="nav-projects">Projetos</a>
       <a href="#contact" id="nav-contact">Contato</a>
     </nav>
-    <div class="language-switcher">
-      <button onclick="switchLanguage('pt')">Português</button>
-      <button onclick="switchLanguage('en')">English</button>
-    </div>
+  
   </header>
 
   <section id="about" class="section">
@@ -57,68 +54,15 @@
   </footer>
   
   
-  <script>
-    const translations = {
-      en: {
-        title: "My Portfolio",
-        navAbout: "About Me",
-        navProjects: "Projects",
-        navContact: "Contact",
-        aboutTitle: "About Me",
-        aboutText: "Hello! I am a developer passionate about creating unique and efficient solutions...",
-        projectsTitle: "My Projects",
-        project1Title: "Solidary Cause",
-        project1Desc: "A website to make donations to those in need.",
-        project1Link: "View Project",
-        footerText: "Made with ❤ by Me | LinkedIn | GitHub",
-      },
-      pt: {
-        title: "Meu Portfólio",
-        navAbout: "Sobre Mim",
-        navProjects: "Projetos",
-        navContact: "Contato",
-        aboutTitle: "Sobre Mim",
-        aboutText: "Olá! Eu sou um desenvolvedor apaixonado...",
-        projectsTitle: "Meus Projetos",
-        project1Title: "Causa Solidária",
-        project1Desc: "Website para fazer doações para quem precisa",
-        project1Link: "Ver Projeto",
-        footerText: "Feito com ❤ por Mim | LinkedIn | GitHub",
-      },
-    };
+  
+  <acript>
 
-    function switchLanguage(lang) {
-      const elements = {
-        title: "title",
-        navAbout: "nav-about",
-        navProjects: "nav-projects",
-        navContact: "nav-contact",
-        aboutTitle: "about-title",
-        aboutText: "about-text",
-        projectsTitle: "projects-title",
-        project1Title: "project1-title",
-        project1Desc: "project1-desc",
-        project1Link: "project1-link",
-        footerText: "footer-text"
-      };
-
-      // Atualiza os textos com base no idioma selecionado
-      const translation = translations[lang];
-      for (let key in elements) {
-        if (elements.hasOwnProperty(key)) {
-          const element = document.getElementById(elements[key]);
-          if (element) {
-            element.innerText = translation[key];
-          }
-        }
-      }
-    }
-
-    // Adiciona comportamento de rolagem suave ao clicar em "Projetos"
+ // Adiciona comportamento de rolagem suave ao clicar em "Projetos"
     document.getElementById("nav-projects").addEventListener("click", function(event) {
       event.preventDefault(); // Evita o comportamento padrão do link
       document.getElementById("projects").scrollIntoView({ behavior: "smooth" });
     });
-  </script>
+
+    </acript>
 </body>
 </html>
